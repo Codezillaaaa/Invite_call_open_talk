@@ -60,7 +60,7 @@ MongoClient.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true,
           user.id = socket.id;
           usersCollection.insertOne(user)
             .then(() => {
-              console.log(`Username- ${user.username} and name - ${user.name}  added to MongoDB`);
+              // console.log(`Username- ${user.username} and name - ${user.name}  added to MongoDB`);
               io.emit('user-add', user);
             })
             .catch((err) => {
@@ -76,7 +76,7 @@ MongoClient.connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true,
           { $set: user }
         )
           .then(() => {
-            console.log(`Username- ${user.username} and name - ${user.name}  updated in MongoDB`);
+            // console.log(`Username- ${user.username} and name - ${user.name}  updated in MongoDB`);
             io.emit('user-update', user);
           })
           .catch((err) => {
